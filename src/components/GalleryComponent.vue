@@ -1,24 +1,10 @@
 <template>
   <swiper class="swiper" :options="swiperOption">
-    <div class="parallax-bg" slot="parallax-bg" data-swiper-parallax="-23%"></div>
-    <swiper-slide>
-      <div class="title" data-swiper-parallax="-100">Slide 1</div>
-      <div class="text" data-swiper-parallax="-360">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
-      </div>
-    </swiper-slide>
-    <swiper-slide>
-      <div class="title" data-swiper-parallax="-100">Slide 2</div>
-      <div class="text" data-swiper-parallax="-360">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
-      </div>
-    </swiper-slide>
-    <swiper-slide>
-      <div class="title" data-swiper-parallax="-100">Slide 3</div>
-      <div class="text" data-swiper-parallax="-360">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla laoreet justo vitae porttitor porttitor. Suspendisse in sem justo. Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod. Aliquam hendrerit lorem at elit facilisis rutrum. Ut at ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec, tincidunt ut libero. Aenean feugiat non eros quis feugiat.</p>
-      </div>
-    </swiper-slide>
+    <swiper-slide class="slide-1"></swiper-slide>
+    <swiper-slide class="slide-2"></swiper-slide>
+    <swiper-slide class="slide-3"></swiper-slide>
+    <swiper-slide class="slide-4"></swiper-slide>
+    <swiper-slide class="slide-5"></swiper-slide>
     <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
     <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
     <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
@@ -29,8 +15,8 @@
   import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 
   export default {
-    name: 'swiper-example-parallax',
-    title: 'Parallax',
+    name: 'swiper-example-fade-effect',
+    title: 'Fade effect',
     components: {
       Swiper,
       SwiperSlide
@@ -38,8 +24,13 @@
     data() {
       return {
         swiperOption: {
-          speed: 600,
-          parallax: true,
+          spaceBetween: 30,
+          effect: 'fade',
+          centeredSlides: true,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false
+          },
           pagination: {
             el: '.swiper-pagination',
             clickable: true
@@ -55,44 +46,34 @@
 </script>
 
 <style lang="scss" scoped>
-  .parallax-bg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 130%;
-    height: 100%;
-    background-size: cover;
-    background-position: left;
-    background-image: url('https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif');
-  }
+
   .swiper {
-    width: 100%;
-    height: 91vh;
+    height: 360px;
 
     .swiper-slide {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      color: #fff;
-      box-sizing: border-box;
-      padding: 0 80px;
-      background-color: transparent;
+      background-position: center;
+      background-size: cover;
 
-      .title {
-        margin-bottom: 10px;
-        font-size: 50px;
-        font-weight: bold;
+      &.slide-1 {
+        background-image:url('https://github.surmon.me/images/example/5.jpg')
       }
-
-      .subtitle {
-        margin-bottom: 10px;
-        font-size: 20px;
+      &.slide-2 {
+        background-image:url('https://github.surmon.me/images/example/6.jpg')
       }
-
-      .text {
-        max-width: 430px;
-        line-height: 1.32;
+      &.slide-3 {
+        background-image:url('https://github.surmon.me/images/example/7.jpg')
+      }
+      &.slide-4 {
+        background-image:url('https://github.surmon.me/images/example/8.jpg')
+      }
+      &.slide-5 {
+        background-image:url('https://github.surmon.me/images/example/9.jpg')
       }
     }
+  }
+
+
+  .swiper[data-v-51020c7b] {
+    height: 91vh  !important;
   }
 </style>

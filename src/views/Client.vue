@@ -9,32 +9,32 @@
                 <vs-col vs-w="1"></vs-col>
                 <vs-col vs-w="10">
                     <div class="images">
-                        <vs-col vs-w="4">
+                        <vs-col vs-lg="4" vs-sm="6">
                             <vs-images>
                                 <vs-image class="image" src="https://picsum.photos/1000/800?image=16" />
                             </vs-images>
                         </vs-col>
-                        <vs-col vs-w="4">
+                        <vs-col vs-lg="4" vs-sm="6">
                             <vs-images>
                                 <vs-image class="image" src="https://picsum.photos/1000/800?image=16" />
                             </vs-images>
                         </vs-col>
-                        <vs-col vs-w="4">
+                        <vs-col vs-lg="4" vs-sm="6">
                             <vs-images>
                                 <vs-image class="image" src="https://picsum.photos/1000/800?image=16" />
                             </vs-images>
                         </vs-col>
-                        <vs-col vs-w="4">
+                        <vs-col vs-lg="4" vs-sm="6">
                             <vs-images>
                                 <vs-image class="image" src="https://picsum.photos/1000/800?image=16" />
                             </vs-images>
                         </vs-col>
-                        <vs-col vs-w="4">
+                        <vs-col vs-lg="4" vs-sm="6">
                             <vs-images>
                                 <vs-image class="image" src="https://picsum.photos/1000/800?image=16" />
                             </vs-images>
                         </vs-col>
-                        <vs-col vs-w="4">
+                        <vs-col vs-lg="4" vs-sm="6">
                             <vs-images>
                                 <vs-image class="image" src="https://picsum.photos/1000/800?image=16" />
                             </vs-images>

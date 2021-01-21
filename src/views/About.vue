@@ -4,14 +4,14 @@
       <vs-col vs-w="1"></vs-col>
         <vs-col vs-w="10">
 
-          <vs-row>
-            <vs-col vs-w="6" vs-justfy="center" vs-align="center">
+          <vs-row vs-col="12">
+            <vs-col vs-lg="6" vs-sm="12" vs-justfy="center" vs-align="center">
               <vs-images hover="scale">
                 <vs-image class="image" src="https://picsum.photos/1000/800?image=16" />
               </vs-images>
             </vs-col>
 
-            <vs-col vs-w="6" vs-justify="center" vs-align="center">
+            <vs-col vs-lg="6" vs-sm="12" vs-justify="center" vs-align="center">
               <div class="text">
                 <h3>اسم العمل</h3>
                 <p>
@@ -32,7 +32,7 @@
             </vs-divider>
             <div class="box">
 
-              <vs-col vs-w="6" vs-justfy="center" vs-align="center">
+              <vs-col vs-lg="6" vs-sm="12"  vs-justfy="center" vs-align="center">
                 <div class="box-body">
                   <vs-row>
                     <vs-col vs-w="4">
@@ -50,7 +50,7 @@
                 </div>
               </vs-col>
 
-              <vs-col vs-w="6" vs-justfy="center" vs-align="center">
+              <vs-col vs-lg="6" vs-sm="12" vs-justfy="center" vs-align="center">
                 <div class="box-body">
                   <vs-row>
                     <vs-col vs-w="4">
@@ -72,7 +72,7 @@
                 </div>
               </vs-col>
 
-              <vs-col vs-w="6" vs-justfy="center" vs-align="center">
+              <vs-col vs-lg="6" vs-sm="12" vs-justfy="center" vs-align="center">
                 <div class="box-body">
                   <vs-row>
                     <vs-col vs-w="4">
@@ -94,7 +94,7 @@
                 </div>
               </vs-col>
 
-              <vs-col vs-w="6" vs-justfy="center" vs-align="center">
+              <vs-col vs-lg="6" vs-sm="12" vs-justfy="center" vs-align="center">
                 <div class="box-body">
                   <vs-row>
                     <vs-col vs-w="4">
