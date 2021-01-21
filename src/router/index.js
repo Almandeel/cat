@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Client from "../views/Client.vue";
 import Partners from "../views/partner.vue";
+// import Post from "../views/Posts.vue";
 import RouterView from "../views/RouterView.vue";
 import { i18n } from "../main.js";
 
@@ -62,6 +63,11 @@ const router = new VueRouter({
           path: "partners",
           name: "partners",
           component : Partners
+        },
+        {
+          path: "products",
+          name: "products",
+          component : () => import("../views/Product.vue")
         },
       ]
     },

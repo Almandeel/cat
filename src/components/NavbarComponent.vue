@@ -25,12 +25,11 @@
                     </vs-navbar-item>
 
                     <vs-navbar-item index="3">
-                        <router-link :to="'/' + $i18n.locale + '/partners' ">{{ $t('partners') }}
-                        </router-link>
+                        <router-link :to="'/' + $i18n.locale + '/partners' ">{{ $t('partners') }}</router-link>
                     </vs-navbar-item>
 
                     <vs-navbar-item index="3">
-                        <a href="#">{{ $t('blog') }} </a>
+                        <router-link :to="'/' + $i18n.locale + '/products' ">{{ $t('blog') }}</router-link>
                     </vs-navbar-item>
                 </vs-navbar>
             </vs-col>
