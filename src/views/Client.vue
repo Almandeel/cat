@@ -51,21 +51,24 @@
 <script>
     export default {
         data() {
-    return {
-      backgroundLoading:'#024fff',
-    };
-  },
-  mounted : function() {
-    this.openLoadingBackground()
-  },
-  methods : {
-    openLoadingBackground(){
-      this.$vs.loading({background:this.backgroundLoading,color:'rgb(255, 255, 255)'})
-      setTimeout( ()=> {
-        this.$vs.loading.close()
-      }, 3000);
-    },
-  }
+            return {
+                backgroundLoading: '#024fff',
+            };
+        },
+        mounted: function () {
+            this.openLoadingBackground()
+        },
+        methods: {
+            openLoadingBackground() {
+                this.$vs.loading({
+                    background: this.backgroundLoading,
+                    color: 'rgb(255, 255, 255)'
+                })
+                setTimeout(() => {
+                    this.$vs.loading.close()
+                }, 3000);
+            },
+        }
     }
 </script>
 

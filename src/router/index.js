@@ -47,27 +47,42 @@ const router = new VueRouter({
         {
           path: "/",
           name: "home",
-          component: Home
+          component: Home,
+          meta : {
+            title : "الرئيسية"
+          }
         },
         {
           path: "about",
           name: "about",
-          component : About
+          component : About,
+          meta : {
+            title : "من نحن"
+          }
         },
         {
           path: "clients",
           name: "clients",
-          component : Client
+          component : Client,
+          meta : {
+            title : "عملائنا"
+          }
         },
         {
           path: "partners",
           name: "partners",
-          component : Partners
+          component : Partners,
+          meta : {
+            title : "شركائنا"
+          }
         },
         {
           path: "products",
           name: "products",
-          component : () => import("../views/Product.vue")
+          component : () => import("../views/Product.vue"),
+          meta : {
+            title : "الخدمات و المنتجات"
+          }
         },
       ]
     },
