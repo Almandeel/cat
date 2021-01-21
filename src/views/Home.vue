@@ -1,18 +1,30 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <gallery></gallery>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import gallery from "@/components/GalleryComponent.vue"
 export default {
-  name: "Home",
-  components: {
-    HelloWorld
+  components : {
+    gallery
+  },
+  data() {
+    return {
+      backgroundLoading:'#024fff',
+    };
+  },
+  mounted : function() {
+    this.openLoadingBackground()
+  },
+  methods : {
+    openLoadingBackground(){
+      this.$vs.loading({background:this.backgroundLoading,color:'rgb(255, 255, 255)'})
+      setTimeout( ()=> {
+        this.$vs.loading.close()
+      }, 3000);
+    },
   }
-};
+}
 </script>
