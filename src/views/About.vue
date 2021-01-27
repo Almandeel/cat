@@ -7,20 +7,15 @@
           <vs-row vs-col="12">
             <vs-col vs-lg="6" vs-sm="12" vs-justfy="center" vs-align="center">
               <vs-images hover="scale">
-                <vs-image class="image" src="https://picsum.photos/1000/800?image=16" />
+                <vs-image class="image" :src="'http://catco1.portfolios.spatiulab.com/images/informations/' + main_data.image" />
               </vs-images>
             </vs-col>
 
             <vs-col vs-lg="6" vs-sm="12" vs-justify="center" vs-align="center">
               <div class="text">
-                <h3>اسم العمل</h3>
+                <h3>{{ main_data.title[locale] }}</h3>
                 <p>
-                  "لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور
-                  أنكايديديونتيوت لابوري ات دولار ماجنا أليكيوا . يوت انيم أد مينيم فينايم,كيواس نوستريد
-                  أكسير سيتاشن يللأمكو لابورأس نيسي يت أليكيوب أكس أيا كوممودو كونسيكيوات . ديواس
-                  أيوتي أريري دولار إن ريبريهينديرأيت فوليوبتاتي فيلايت أيسسي كايلليوم دولار أيو فيجايت
-                  نيولا باراياتيور. أيكسسيبتيور ساينت أوككايكات كيوبايداتات نون بروايدينت ,سيونت ان كيولبا
-                  كيو أوفيسيا ديسيريونتموليت انيم أيدي ايست لابوريوم."
+                  {{ main_data.description[locale] }}
                 </p>
               </div>
             </vs-col>
@@ -32,80 +27,18 @@
             </vs-divider>
             <div class="box">
 
-              <vs-col vs-lg="6" vs-sm="12"  vs-justfy="center" vs-align="center">
+              <vs-col vs-lg="6" vs-sm="12"  vs-justfy="center" vs-align="center" v-for="(about, index) in abouts"  :key="index">
                 <div class="box-body">
                   <vs-row>
                     <vs-col vs-w="4">
                       <vs-col vs-justfy="center" vs-align="center">
-                        <img width="100%" src="https://picsum.photos/1000/800?image=16" alt="">
+                        <img width="100%" :src="'http://catco1.portfolios.spatiulab.com/images/informations/' + about.image " alt="">
                       </vs-col>
                     </vs-col>
                     <vs-col vs-w="8">
                       <div class="description">
-                        <h3>الرؤيا</h3>
-                        <p>لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور</p>
-                      </div>
-                    </vs-col>
-                  </vs-row>
-                </div>
-              </vs-col>
-
-              <vs-col vs-lg="6" vs-sm="12" vs-justfy="center" vs-align="center">
-                <div class="box-body">
-                  <vs-row>
-                    <vs-col vs-w="4">
-                      <vs-col vs-justfy="center" vs-align="center">
-                        <img width="100%" src="https://picsum.photos/1000/800?image=16" alt="">
-                      </vs-col>
-                    </vs-col>
-                    <vs-col vs-w="8">
-                      <div class="description">
-                        <h3>الرؤيا</h3>
-                        <vs-list>
-                          <vs-list-item title="لوريم ايبسوم دولار سيت أميت"></vs-list-item>
-                          <vs-list-item title="لوريم ايبسوم دولار سيت أميت"></vs-list-item>
-                          <vs-list-item title="لوريم ايبسوم دولار سيت أميت"></vs-list-item>
-                        </vs-list>
-                      </div>
-                    </vs-col>
-                  </vs-row>
-                </div>
-              </vs-col>
-
-              <vs-col vs-lg="6" vs-sm="12" vs-justfy="center" vs-align="center">
-                <div class="box-body">
-                  <vs-row>
-                    <vs-col vs-w="4">
-                      <vs-col vs-justfy="center" vs-align="center">
-                        <img width="100%" src="https://picsum.photos/1000/800?image=16" alt="">
-                      </vs-col>
-                    </vs-col>
-                    <vs-col vs-w="8">
-                      <div class="description">
-                        <h3>الرؤيا</h3>
-                        <vs-list>
-                          <vs-list-item title="لوريم ايبسوم دولار سيت أميت"></vs-list-item>
-                          <vs-list-item title="لوريم ايبسوم دولار سيت أميت"></vs-list-item>
-                          <vs-list-item title="لوريم ايبسوم دولار سيت أميت"></vs-list-item>
-                        </vs-list>
-                      </div>
-                    </vs-col>
-                  </vs-row>
-                </div>
-              </vs-col>
-
-              <vs-col vs-lg="6" vs-sm="12" vs-justfy="center" vs-align="center">
-                <div class="box-body">
-                  <vs-row>
-                    <vs-col vs-w="4">
-                      <vs-col vs-justfy="center" vs-align="center">
-                        <img width="100%" src="https://picsum.photos/1000/800?image=16" alt="">
-                      </vs-col>
-                    </vs-col>
-                    <vs-col vs-w="8">
-                      <div class="description">
-                        <h3>الرؤيا</h3>
-                        <p>لوريم ايبسوم دولار سيت أميت ,كونسيكتيتور أدايبا يسكينج أليايت,سيت دو أيوسمود تيمبور</p>
+                        <h3>{{ about.title[locale] }}</h3>
+                        <p>{{ about.description[locale] }}</p>
                       </div>
                     </vs-col>
                   </vs-row>
@@ -122,13 +55,20 @@
 </template>
 
 <script>
+ import axios from "axios";
+ import { i18n } from "../main.js";
+
   export default {
     data() {
     return {
+      locale : i18n.locale,
+      main_data : {},
+      abouts  : [],
       backgroundLoading:'#024fff',
     };
   },
   mounted : function() {
+    this.getData()
     this.openLoadingBackground()
   },
   methods : {
@@ -138,6 +78,13 @@
         this.$vs.loading.close()
       }, 3000);
     },
+    getData() {
+      axios.get("http://catco1.portfolios.spatiulab.com/api/about").then((result) => {
+        this.main_data = result.data[0]
+        this.abouts = result.data[1]
+        console.log(this.abouts)
+      })
+    }
   }
   }
 </script>

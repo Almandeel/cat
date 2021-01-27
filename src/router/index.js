@@ -37,7 +37,7 @@ const router = new VueRouter({
       component: RouterView,
       beforeEnter(to, from, next) {
         const lang = to.params.lang;
-        if (!["ar", "en"].includes(lang)) return next("ar");
+        if (!["ar", "en"].includes(lang)) return next("en");
         if (i18n.locale !== lang) {
           i18n.locale = lang;
         }
@@ -49,7 +49,7 @@ const router = new VueRouter({
           name: "home",
           component: Home,
           meta : {
-            title : "الرئيسية"
+            title : 'Home'
           }
         },
         {
@@ -57,7 +57,7 @@ const router = new VueRouter({
           name: "about",
           component : About,
           meta : {
-            title : "من نحن"
+            title : "About"
           }
         },
         {
@@ -65,7 +65,7 @@ const router = new VueRouter({
           name: "clients",
           component : Client,
           meta : {
-            title : "عملائنا"
+            title : "Clients"
           }
         },
         {
@@ -73,7 +73,7 @@ const router = new VueRouter({
           name: "partners",
           component : Partners,
           meta : {
-            title : "شركائنا"
+            title : "Partners"
           }
         },
         {
@@ -81,7 +81,7 @@ const router = new VueRouter({
           name: "products",
           component : () => import("../views/Product.vue"),
           meta : {
-            title : "الخدمات و المنتجات"
+            title : "Products & Services"
           }
         },
       ]

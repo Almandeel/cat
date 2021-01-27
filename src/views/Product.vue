@@ -2,7 +2,7 @@
     <div class="posts">
         <div class="posts-title">
             <div class="overlay"></div>
-            <h2>المنتجات و الخدمات</h2>
+                    <h2>{{ $t('blog') }}</h2>
         </div>
 
         <product />

@@ -4,39 +4,14 @@
             <vs-row vs-col="12">
                 <div class="client-title">
                     <div class="overlay"></div>
-                    <h2>عملائنا</h2>
+                    <h2>{{ $t('clients') }}</h2>
                 </div>
                 <vs-col vs-w="1"></vs-col>
                 <vs-col vs-w="10">
                     <div class="images">
-                        <vs-col vs-lg="4" vs-sm="6">
+                        <vs-col vs-lg="4" vs-sm="6" v-for="(client, index) in clients" :key="index">
                             <vs-images>
-                                <vs-image class="image" src="https://picsum.photos/1000/800?image=16" />
-                            </vs-images>
-                        </vs-col>
-                        <vs-col vs-lg="4" vs-sm="6">
-                            <vs-images>
-                                <vs-image class="image" src="https://picsum.photos/1000/800?image=16" />
-                            </vs-images>
-                        </vs-col>
-                        <vs-col vs-lg="4" vs-sm="6">
-                            <vs-images>
-                                <vs-image class="image" src="https://picsum.photos/1000/800?image=16" />
-                            </vs-images>
-                        </vs-col>
-                        <vs-col vs-lg="4" vs-sm="6">
-                            <vs-images>
-                                <vs-image class="image" src="https://picsum.photos/1000/800?image=16" />
-                            </vs-images>
-                        </vs-col>
-                        <vs-col vs-lg="4" vs-sm="6">
-                            <vs-images>
-                                <vs-image class="image" src="https://picsum.photos/1000/800?image=16" />
-                            </vs-images>
-                        </vs-col>
-                        <vs-col vs-lg="4" vs-sm="6">
-                            <vs-images>
-                                <vs-image class="image" src="https://picsum.photos/1000/800?image=16" />
+                                <vs-image class="image" :src="'http://catco1.portfolios.spatiulab.com/images/works/' + client.image" />
                             </vs-images>
                         </vs-col>
                     </div>
@@ -49,14 +24,17 @@
 
 
 <script>
+    import axios from "axios";
     export default {
         data() {
             return {
                 backgroundLoading: '#024fff',
+                clients : []
             };
         },
         mounted: function () {
-            this.openLoadingBackground()
+            this.openLoadingBackground(),
+            this.getData()
         },
         methods: {
             openLoadingBackground() {
@@ -68,6 +46,11 @@
                     this.$vs.loading.close()
                 }, 3000);
             },
+            getData() {
+                axios.get('http://catco1.portfolios.spatiulab.com/api/clients').then((result) => {
+                    this.clients = result.data
+                })
+            }
         }
     }
 </script>
@@ -114,6 +97,9 @@
         .image {
             width: 100%;
             margin-bottom: 2%;
+            .vs-image--img {
+                background-size: cover;
+            }
         }
     }
 </style>

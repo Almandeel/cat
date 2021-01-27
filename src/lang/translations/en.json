@@ -1,4 +1,9 @@
 {
-    "home": "home",
-    "about": "about"
+    "home": "Home",
+    "about": "About",
+    "clients" : "Clients", 
+    "partners" : "Partners",
+    "blog" : "Producsts & Services",
+    "ar" : "العربية",
+    "en" : "English"
 }

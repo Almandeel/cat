@@ -1,13 +1,17 @@
 <template>
     <div class="example-3d">
         <swiper class="swiper" :options="swiperOption">
-            <swiper-slide>Product 1</swiper-slide>
-            <swiper-slide>Product 2</swiper-slide>
+            <swiper-slide v-for="(product, index) in products" :key="index"
+                :style="{backgroundImage : 'url(http://catco1.portfolios.spatiulab.com/images/services/'+  product.image  +')'}">
+                {{ product.name[locale] }}
+                <div class="overlay"></div>
+            </swiper-slide>
+            <!-- <swiper-slide>Product 2</swiper-slide>
             <swiper-slide>Product 3</swiper-slide>
             <swiper-slide>Product 4</swiper-slide>
             <swiper-slide>Product 5</swiper-slide>
             <swiper-slide>Product 6</swiper-slide>
-            <swiper-slide>Product 7</swiper-slide>
+            <swiper-slide>Product 7</swiper-slide> -->
             <div class="swiper-pagination" slot="pagination"></div>
         </swiper>
     </div>
@@ -19,6 +23,11 @@
         SwiperSlide
     } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
+    import axios from "axios"
+    import {
+        i18n
+    } from "../main.js";
+
 
     export default {
         name: 'swiper-example-3d-coverflow',
@@ -29,6 +38,7 @@
         },
         data() {
             return {
+                locale: i18n.locale,
                 swiperOption: {
                     effect: 'coverflow',
                     grabCursor: true,
@@ -44,8 +54,19 @@
                     pagination: {
                         el: '.swiper-pagination'
                     }
-                }
+                },
+                products: []
             }
+        },
+        methods: {
+            getProducts() {
+                axios.get("http://catco1.portfolios.spatiulab.com/api/products").then((result) => {
+                    this.products = result.data
+                })
+            }
+        },
+        mounted: function () {
+            this.getProducts()
         }
     }
 </script>
@@ -70,17 +91,29 @@
             height: 300px;
             text-align: center;
             font-weight: bold;
-            font-size: 20px;
+            font-size: 25px;
             background-color: #2C8DFB;
             background-position: center;
             background-size: cover;
             color: #fff;
+            border-radius: 20px;
         }
 
         .swiper-pagination {
             /deep/ .swiper-pagination-bullet.swiper-pagination-bullet-active {
                 background-color: #fff;
             }
+        }
+
+        .overlay {
+            position: absolute;
+            top:0;
+            bottom:0;
+            background-color: rgba(34, 34, 34, 0.329);
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            border-radius: 20px;
         }
     }
 </style>

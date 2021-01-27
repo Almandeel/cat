@@ -25,11 +25,18 @@
                     </vs-navbar-item>
 
                     <vs-navbar-item index="3">
-                        <router-link :to="'/' + $i18n.locale + '/partners' ">{{ $t('partners') }}</router-link>
+                        <router-link :to="'/' + $i18n.locale + '/partners' ">{{ $t('partners') }}
+                        </router-link>
                     </vs-navbar-item>
 
                     <vs-navbar-item index="3">
-                        <router-link :to="'/' + $i18n.locale + '/products' ">{{ $t('blog') }}</router-link>
+                        <router-link :to="'/' + $i18n.locale + '/products' ">{{ $t('blog') }}
+                        </router-link>
+                    </vs-navbar-item>
+
+                    <vs-navbar-item index="4">
+                        <router-link v-if="locale == 'ar'" @click="chengeLang()" to="/">{{ $t('en') }}</router-link>
+                        <router-link v-if="locale == 'en'" @click="chengeLang()" to="/">{{ $t('ar') }}</router-link>
                     </vs-navbar-item>
                 </vs-navbar>
             </vs-col>
@@ -39,19 +46,29 @@
     </div>
 </template>
 <script>
+    import {
+        i18n
+    } from "../main.js";
     export default {
-        // data: () => ({
-        //     activeItem: 0,
-        //     backgroundLoading:'#024fff',
-        // }),
-        // methods:{
-        //     openLoadingBackground(){
-        //     this.$vs.loading({background:this.backgroundLoading,color:'rgb(255, 255, 255)'})
-        //     setTimeout( ()=> {
-        //         this.$vs.loading.close()
-        //     }, 3000);
-        //     },
-        // },
+        data: () => ({
+            locale: i18n.locale,
+            activeItem: 0,
+            backgroundLoading: '#024fff',
+        }),
+        methods: {
+            chengeLang() {
+                if (this.$i18n.locale == 'ar') {
+                    this.$i18n.locale = 'en'
+                } 
+                else {
+                    this.$i18n.locale = 'ar'
+                    // window.location.reload()
+                }
+                                    window.location.reload()
+
+
+            }
+        },
     }
 </script>
 
@@ -61,6 +78,7 @@
     .logo {
         color: $main-color !important;
     }
+
     .vs-navbar--item:hover a {
         transition: all .5s ease-in-out;
         color: #024fff

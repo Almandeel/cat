@@ -18,6 +18,9 @@ export default {
       document.title = to.meta.title || 'Your Website'
     }
   },
+  methods : {
+    
+  }
 }
 </script>
 
