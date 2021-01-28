@@ -23,7 +23,7 @@
 
           <div class="items">
             <vs-divider position="center">
-              الرؤيا و الاهداف
+              {{ $t("vision")  }}
             </vs-divider>
             <div class="box">
 
@@ -56,12 +56,11 @@
 
 <script>
  import axios from "axios";
- import { i18n } from "../main.js";
 
   export default {
     data() {
     return {
-      locale : i18n.locale,
+      locale : localStorage.getItem('lang'),
       main_data : {},
       abouts  : [],
       backgroundLoading:'#024fff',

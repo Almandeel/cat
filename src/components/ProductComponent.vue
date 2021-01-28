@@ -24,9 +24,6 @@
     } from 'vue-awesome-swiper'
     import 'swiper/css/swiper.css'
     import axios from "axios"
-    import {
-        i18n
-    } from "../main.js";
 
 
     export default {
@@ -38,7 +35,7 @@
         },
         data() {
             return {
-                locale: i18n.locale,
+                locale : localStorage.getItem('lang'),
                 swiperOption: {
                     effect: 'coverflow',
                     grabCursor: true,
