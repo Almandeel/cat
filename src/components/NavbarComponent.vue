@@ -6,7 +6,7 @@
                 <vs-navbar v-model="activeItem" class="nabarx">
                     <div slot="title">
                         <vs-navbar-title class="logo">
-                            CATCO
+                            <img style="width:23%" src="../assets/logo.png" alt="" >
                         </vs-navbar-title>
                     </div>
 

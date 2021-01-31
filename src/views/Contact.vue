@@ -6,7 +6,9 @@
                 <h2>{{ $t('contacts') }}</h2>
             </div>
             <vs-col vs-w="1"></vs-col>
-            <vs-col vs-w="10"></vs-col>
+            <vs-col vs-w="10">
+                
+            </vs-col>
             <vs-col vs-w="1"></vs-col>
         </vs-row>
     </div>
