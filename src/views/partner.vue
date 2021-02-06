@@ -33,7 +33,7 @@
             };
         },
         mounted: function () {
-            this.openLoadingBackground()
+            // this.openLoadingBackground()
             this.getDate()
         },
         methods: {

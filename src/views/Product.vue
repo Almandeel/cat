@@ -2,37 +2,52 @@
     <div class="posts">
         <div class="posts-title">
             <div class="overlay"></div>
-                    <h2>{{ $t('blog') }}</h2>
+            <h2>{{ $t('blog') }}</h2>
         </div>
 
-        <product />
+        <vs-row vs-w="12">
+            <vs-col class="cardx" vs-justify="center" vs-align="center" vs-lg="4" vs-sm="12" v-for="(product, index) in products" :key="index" >
+                <vs-card  fixedHeight>
+                    <div class="header" slot="header">
+                        <h3>
+                            {{  product.name[locale]  }}
+                        </h3>
+                    </div>
+                    <div slot="media">
+                        <img :src="'http://catco1.portfolios.spatiulab.com/images/services/' +  product.image">
+                    </div>
+                    <div>
+                        <span>
+                            {{  product.description[locale]  }}
+                        </span>
+                    </div>
+
+                </vs-card>
+            </vs-col>
+        </vs-row>
+
     </div>
 </template>
 
 <script>
-    import Product from "@/components/ProductComponent.vue"
+    import axios from "axios"
     export default {
-        components : {
-            Product
-        },
         data() {
             return {
+                locale : localStorage.getItem('lang'),
                 backgroundLoading: '#024fff',
+                products: []
             };
         },
-        mounted: function () {
-            this.openLoadingBackground()
-        },
         methods: {
-            openLoadingBackground() {
-                this.$vs.loading({
-                    background: this.backgroundLoading,
-                    color: 'rgb(255, 255, 255)'
+            getProducts() {
+                axios.get("http://catco1.portfolios.spatiulab.com/api/products").then((result) => {
+                    this.products = result.data
                 })
-                setTimeout(() => {
-                    this.$vs.loading.close()
-                }, 3000);
-            },
+            }
+        },
+        mounted: function () {
+            this.getProducts()
         }
     }
 </script>
@@ -40,6 +55,7 @@
 <style lang="scss">
     .posts {
         direction: rtl;
+
         .posts-title {
             z-index: 2;
             color: #fff;
@@ -72,6 +88,17 @@
                 width: 100%;
                 height: 100%;
                 z-index: -1;
+            }
+        }
+
+        .cardx {
+            padding: 25px;
+            margin-bottom: 15px;
+
+            .vs-card--header {
+                background-color: #164483;
+                color:#fff;
+                text-align:center
             }
         }
     }

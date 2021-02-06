@@ -70,7 +70,7 @@
     },
     mounted: function () {
       this.getData()
-      this.openLoadingBackground()
+      // this.openLoadingBackground()
     },
     methods: {
       openLoadingBackground() {

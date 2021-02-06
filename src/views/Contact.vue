@@ -23,7 +23,7 @@
             };
         },
         mounted: function () {
-            this.openLoadingBackground()
+            // this.openLoadingBackground()
         },
         methods: {
             openLoadingBackground() {

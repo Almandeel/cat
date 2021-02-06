@@ -15,28 +15,23 @@
                     </vs-navbar-item>
 
                     <vs-navbar-item index="1">
-                        <router-link to="about">{{ $t('about') }}
-                        </router-link>
+                        <router-link to="about">{{ $t('about') }}</router-link>
                     </vs-navbar-item>
 
                     <vs-navbar-item index="2">
-                        <router-link to="/clients">{{ $t('clients') }}
-                        </router-link>
+                        <router-link to="/clients">{{ $t('clients') }}</router-link>
                     </vs-navbar-item>
 
                     <vs-navbar-item index="3">
-                        <router-link to="/partners">{{ $t('partners') }}
-                        </router-link>
+                        <router-link to="/partners">{{ $t('partners') }}</router-link>
                     </vs-navbar-item>
 
                     <vs-navbar-item index="3">
-                        <router-link to="/products">{{ $t('blog') }}
-                        </router-link>
+                        <router-link to="/products">{{ $t('blog') }}</router-link>
                     </vs-navbar-item>
 
                     <vs-navbar-item index="3">
-                        <router-link to="/contacts">{{ $t('contacts') }}
-                        </router-link>
+                        <router-link to="/contacts">{{ $t('contacts') }}</router-link>
                     </vs-navbar-item>
 
                     <vs-navbar-item index="4">
