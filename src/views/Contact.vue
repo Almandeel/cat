@@ -8,10 +8,10 @@
             <vs-col vs-w="1"></vs-col>
             <vs-col vs-w="10">
                 <div class="contact-section">
-                    <vs-col vs-w="6" style="text-align:center">
-                        <img src="../assets/logo.png" alt="logo" srcset="">
+                    <vs-col vs-w="6" vs-lg="6" vs-sm="12" style="text-align:center">
+                        <img style="width:100%; margin-bottom:5%" src="../assets/logo.png" alt="logo" srcset="">
                     </vs-col>
-                    <vs-col vs-w="6">
+                    <vs-col vs-w="6" vs-lg="6" vs-sm="12">
                         <div class="contact-body">
                             <p>
                                 <span>
