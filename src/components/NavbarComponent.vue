@@ -11,7 +11,7 @@
                     </div>
 
                     <vs-navbar-item index="0">
-                        <router-link to="/">{{ $t('home') }}</router-link>
+                        <router-link to="/" exact="/">{{ $t('home') }}</router-link>
                     </vs-navbar-item>
 
                     <vs-navbar-item index="1">

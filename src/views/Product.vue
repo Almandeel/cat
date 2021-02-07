@@ -6,23 +6,56 @@
         </div>
 
         <vs-row vs-w="12">
-            <vs-col class="cardx" vs-justify="center" vs-align="center" vs-lg="4" vs-sm="12" v-for="(product, index) in products" :key="index" >
-                <vs-card  fixedHeight>
-                    <div class="header" slot="header">
-                        <h3>
-                            {{  product.name[locale]  }}
-                        </h3>
-                    </div>
-                    <div slot="media">
-                        <img :src="'http://catco1.portfolios.spatiulab.com/images/services/' +  product.image">
-                    </div>
-                    <div>
-                        <span>
-                            {{  product.description[locale]  }}
-                        </span>
-                    </div>
-
-                </vs-card>
+            <vs-col v-for="(product,index) in products" :key="index" class="cardx" type="flex" vs-justify="center"
+                vs-align="center" vs-w="12">
+                <div v-if="index % 2 == 0">
+                    <vs-card fixedHeight>
+                        <vs-row>
+                            <vs-col vs-lg="4" vs-sm="12">
+                                <div>
+                                    <img
+                                        :src="'http://catco1.portfolios.spatiulab.com/images/services/' +  product.image" style="width:100%">
+                                </div>
+                            </vs-col>
+                            <vs-col class="title" vs-lg="8" vs-sm="12">
+                                <div>
+                                    <h3>
+                                        {{ product.name[locale] }}
+                                    </h3>
+                                </div>
+                                <div>
+                                    <p>
+                                        {{ product.description[locale] }}
+                                    </p>
+                                </div>
+                            </vs-col>
+                        </vs-row>
+                    </vs-card>
+                </div>
+                <div v-else>
+                    <vs-card style="direction:ltr" fixedHeight>
+                        <vs-row>
+                            <vs-col vs-lg="4" vs-sm="12">
+                                <div>
+                                    <img
+                                        :src="'http://catco1.portfolios.spatiulab.com/images/services/' +  product.image" style="width:100%">
+                                </div>
+                            </vs-col>
+                            <vs-col class="title" vs-lg="8" vs-sm="12">
+                                <div>
+                                    <h3>
+                                        {{ product.name[locale] }}
+                                    </h3>
+                                </div>
+                                <div>
+                                    <p>
+                                        {{ product.description[locale] }}
+                                    </p>
+                                </div>
+                            </vs-col>
+                        </vs-row>
+                    </vs-card>
+                </div>
             </vs-col>
         </vs-row>
 
@@ -34,7 +67,7 @@
     export default {
         data() {
             return {
-                locale : localStorage.getItem('lang'),
+                locale: localStorage.getItem('lang'),
                 backgroundLoading: '#024fff',
                 products: []
             };
@@ -95,10 +128,24 @@
             padding: 25px;
             margin-bottom: 15px;
 
-            .vs-card--header {
-                background-color: #164483;
-                color:#fff;
-                text-align:center
+            .header {
+                background-color: aqua;
+            }
+
+            .title {
+                padding: 60px 20px;
+                text-align: center;
+
+                h3 {
+                    font-size: 30px;
+                    margin-bottom: 20px;
+                }
+
+                p {
+                    font-size: 18px;
+                    line-height: 2;
+                }
+
             }
         }
     }
