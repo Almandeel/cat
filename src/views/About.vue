@@ -86,7 +86,7 @@
         axios.get("http://catco1.portfolios.spatiulab.com/api/about").then((result) => {
           this.main_data = result.data[0]
           this.abouts = result.data[1]
-          console.log(this.abouts)
+          // console.log(this.abouts)
         })
       }
     }
