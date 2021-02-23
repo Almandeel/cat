@@ -3,7 +3,7 @@
         <vs-row>
             <vs-col vs-w="1"></vs-col>
             <vs-col vs-w="10">
-                <vs-navbar v-model="activeItem" class="nabarx">
+                <vs-navbar v-model="activeItem" class="nabarx" v-bind:class="{ rtl: isRtl }">
                     <div slot="title">
                         <vs-navbar-title class="logo">
                             <img style="width:23%" src="../assets/logo.png" alt="" >
@@ -59,6 +59,11 @@
                 window.location.reload()
             }
         },
+        computed: {
+            isRtl() {
+                return this.locale == 'ar';
+            }
+        }
     }
 </script>
 
@@ -86,7 +91,7 @@
         padding: 10px 0;
     }
 
-    .vs-navbar-color-transparent {
+    .rtl{
         direction: rtl;
     }
 </style>
