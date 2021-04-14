@@ -6,7 +6,7 @@
                 <vs-navbar v-model="activeItem" class="nabarx" v-bind:class="{ rtl: isRtl }">
                     <div slot="title">
                         <vs-navbar-title class="logo">
-                            <img style="width:23%" src="../assets/logo.png" alt="" >
+                            <img style="width:45%" src="../assets/logo.png" alt="" >
                         </vs-navbar-title>
                     </div>
 
@@ -18,16 +18,16 @@
                         <router-link to="about">{{ $t('about') }}</router-link>
                     </vs-navbar-item>
 
-                    <vs-navbar-item index="2">
-                        <router-link to="/clients">{{ $t('clients') }}</router-link>
+                    <vs-navbar-item index="3">
+                        <router-link to="/products">{{ $t('blog') }}</router-link>
                     </vs-navbar-item>
 
                     <vs-navbar-item index="3">
                         <router-link to="/partners">{{ $t('partners') }}</router-link>
                     </vs-navbar-item>
 
-                    <vs-navbar-item index="3">
-                        <router-link to="/products">{{ $t('blog') }}</router-link>
+                    <vs-navbar-item index="2">
+                        <router-link to="/clients">{{ $t('clients') }}</router-link>
                     </vs-navbar-item>
 
                     <vs-navbar-item index="3">

@@ -9,9 +9,19 @@
                 <vs-col vs-w="1"></vs-col>
                 <vs-col vs-w="10">
                     <div class="images">
+                        <!-- <vs-col vs-lg="2" vs-sm="6" v-for="(partner, index) in partners" :key="index">
+                            <vs-images class="con-vs-image">
+                                <img class="image image-blur" :src="'http://catco1.portfolios.spatiulab.com/images/teams/' + partner.image" />
+                            </vs-images>
+                        </vs-col> -->
                         <vs-col vs-lg="4" vs-sm="6" v-for="(partner, index) in partners" :key="index">
-                            <vs-images hover="zoom">
-                                <vs-image class="image" :src="'http://catco1.portfolios.spatiulab.com/images/teams/' + partner.image" />
+                            <vs-avatar>
+                                <img :src="'http://catco1.portfolios.spatiulab.com/images/teams/' + partner.image" >
+                            </vs-avatar>
+                        </vs-col>
+                        <vs-col vs-lg="4" vs-sm="6" v-for="(partner, index) in partners" :key="index">
+                            <vs-images>
+                                <vs-image size="30" class="image" :src="'http://catco1.portfolios.spatiulab.com/images/teams/' + partner.image" />
                             </vs-images>
                         </vs-col>
                     </div>
@@ -100,6 +110,8 @@
             .vs-image--img {
                 background-size: cover;
             }
+  max-height: 500px;
+  overflow: auto;
         }
     }
 </style>

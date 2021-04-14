@@ -9,9 +9,9 @@
                 <vs-col vs-w="1"></vs-col>
                 <vs-col vs-w="10">
                     <div class="images">
-                        <vs-col vs-lg="4" vs-sm="6" v-for="(client, index) in clients" :key="index">
+                        <vs-col vs-lg="2" vs-sm="3" v-for="(client, index) in clients" :key="index">
                             <vs-images>
-                                <vs-image class="image" :src="'http://catco1.portfolios.spatiulab.com/images/works/' + client.image" />
+                                <img class="image vs-image" :src="'http://catco1.portfolios.spatiulab.com/images/works/' + client.image">
                             </vs-images>
                         </vs-col>
                     </div>
