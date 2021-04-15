@@ -4,17 +4,16 @@
       <vs-col vs-w="1"></vs-col>
       <vs-col vs-w="10">
 
-        <vs-row vs-col="12">
+        <vs-row vs-col="12" v-if="main_data !== {}">
           <vs-col vs-lg="6" vs-sm="12" vs-justfy="center" vs-align="center">
             <vs-images hover="scale">
               <vs-image class="image" :src="'http://catco1.portfolios.spatiulab.com/images/informations/' + main_data.image" />
             </vs-images>
           </vs-col>
-
-          <vs-col vs-lg="6" vs-sm="12" vs-justify="center" vs-align="center">
+          <vs-col vs-lg="6" vs-sm="12" vs-justify="left" vs-align="left" dir="ltr">
             <div class="text">
-              <h3>{{ main_data.title[locale] }}</h3>
-              <p>
+              <h3 :class="{ ltr: !isRtl }">{{ main_data.title[locale] }}</h3>
+              <p class="description" :class="{ ltr: !isRtl }">
                 {{ main_data.description[locale] }}
               </p>
             </div>
@@ -25,10 +24,9 @@
           <vs-divider position="center">
             {{ $t("vision") }}
           </vs-divider>
-          <div class="box">
+          <div class="box" v-if="abouts !== {}">
 
-            <vs-col vs-lg="6" vs-sm="12" vs-justfy="center" vs-align="center" v-for="(about, index) in abouts"
-              :key="index">
+            <vs-col vs-lg="6" vs-sm="12" vs-justfy="center" vs-align="center" v-for="(about, index) in abouts" :key="index">
               <div class="box-body">
                 <vs-row>
                   <vs-col vs-w="4">
@@ -89,6 +87,11 @@
           // console.log(this.abouts)
         })
       }
+    },
+    computed: {
+      isRtl() {
+        return this.locale == 'ar';
+      }
     }
   }
 </script>
@@ -97,7 +100,7 @@
 <style lang="scss">
   .about {
     margin-top: 2%;
-    text-align: center;
+    text-align: left;
 
     .text {
       margin-top: 10%;
@@ -144,8 +147,8 @@
         }
 
         .description {
-          direction: rtl;
-          text-align: justify;
+          direction: ltr;
+          text-align: left;
           background-color: #eee;
           height: 50vh;
           padding: 40px 30px
@@ -158,5 +161,8 @@
       background-size: contain;
     }
 
+  }
+  .ltr {
+    direction: ltr;
   }
 </style>

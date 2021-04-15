@@ -4,26 +4,27 @@
             <vs-row vs-col="12">
                 <div class="partners-title">
                     <div class="overlay"></div>
-                    <h2>{{ $t('partners') }}</h2>
+                    <h2 :class="{ ltr: !isRtl }">{{ $t('partners') }}</h2>
                 </div>
                 <vs-col vs-w="1"></vs-col>
                 <vs-col vs-w="10">
-                    <div class="images">
-                        <!-- <vs-col vs-lg="2" vs-sm="6" v-for="(partner, index) in partners" :key="index">
-                            <vs-images class="con-vs-image">
-                                <img class="image image-blur" :src="'http://catco1.portfolios.spatiulab.com/images/teams/' + partner.image" />
-                            </vs-images>
-                        </vs-col> -->
-                        <vs-col vs-lg="4" vs-sm="6" v-for="(partner, index) in partners" :key="index">
-                            <vs-avatar>
-                                <img :src="'http://catco1.portfolios.spatiulab.com/images/teams/' + partner.image" >
-                            </vs-avatar>
-                        </vs-col>
-                        <vs-col vs-lg="4" vs-sm="6" v-for="(partner, index) in partners" :key="index">
-                            <vs-images>
-                                <vs-image size="30" class="image" :src="'http://catco1.portfolios.spatiulab.com/images/teams/' + partner.image" />
-                            </vs-images>
-                        </vs-col>
+                    <!-- <div style="display: grid; grid-gap: 5px">
+                        <img style="width: 100%" :src="'http://catco1.portfolios.spatiulab.com/images/teams/' + partner.image" alt="" srcset="" v-for="(partner, index) in partners" :key="index">
+                    </div> -->
+                    <div class="galary" style="
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-content: flex-start;
+                        justify-content: space-between;
+                    ">
+                        <div href="#" v-for="(partner, index) in partners" :key="index" style="
+                            flex-grow: 1;
+                            flex-basis: 200px;
+                            max-width: 150px;
+                            margin: 25px;
+                        ">
+                            <img :src="'http://catco1.portfolios.spatiulab.com/images/teams/' + partner.image" alt="" srcset="" style="height: 100%; width: 100%;">
+                        </div>
                     </div>
                 </vs-col>
                 <vs-col vs-w="1"></vs-col>
@@ -60,6 +61,11 @@
                 axios.get('http://catco1.portfolios.spatiulab.com/api/partners').then((result) => {
                     this.partners = result.data
                 })
+            }
+        },
+        computed: {
+            isRtl() {
+                return this.locale == 'ar';
             }
         }
     }
@@ -107,11 +113,34 @@
         .image {
             width: 100%;
             margin-bottom: 2%;
+            max-height: 500px;
+            overflow: auto;
             .vs-image--img {
                 background-size: cover;
             }
-  max-height: 500px;
-  overflow: auto;
         }
     }
+
+    .ltr {
+        direction: ltr !important;
+    }
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-between;
+}
+
+.gallery a {
+  flex-grow: 1;
+  flex-basis: 125px;
+  max-width: 300px;
+  margin: 5px;
+}
+
+.gallery img {
+  height: 100%;
+  width: 100%;
+}
 </style>

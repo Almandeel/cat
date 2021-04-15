@@ -9,11 +9,21 @@
                 <vs-col vs-w="1"></vs-col>
                 <vs-col vs-w="10">
                     <div class="images">
-                        <vs-col vs-lg="2" vs-sm="3" v-for="(client, index) in clients" :key="index">
-                            <vs-images>
-                                <img class="image vs-image" :src="'http://catco1.portfolios.spatiulab.com/images/works/' + client.image">
-                            </vs-images>
-                        </vs-col>
+                        <div class="galary" style="
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-content: flex-start;
+                            justify-content: space-between;
+                        ">
+                            <div href="#" v-for="(client, index) in clients" :key="index" style="
+                                flex-grow: 1;
+                                flex-basis: 200px;
+                                max-width: 190px;
+                                margin: 25px;
+                            ">
+                                <img :src="'http://catco1.portfolios.spatiulab.com/images/works/' + client.image" alt="" srcset="" style="height: 100%; width: 100%;">
+                            </div>
+                        </div>
                     </div>
                 </vs-col>
                 <vs-col vs-w="1"></vs-col>

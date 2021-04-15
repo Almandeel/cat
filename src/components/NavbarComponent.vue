@@ -3,7 +3,7 @@
         <vs-row>
             <vs-col vs-w="1"></vs-col>
             <vs-col vs-w="10">
-                <vs-navbar v-model="activeItem" class="nabarx" v-bind:class="{ rtl: isRtl }">
+                <vs-navbar v-model="activeItem" class="nabarx" v-bind:class="{ rtl: !isRtl }">
                     <div slot="title">
                         <vs-navbar-title class="logo">
                             <img style="width:45%" src="../assets/logo.png" alt="" >
