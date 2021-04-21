@@ -8,9 +8,6 @@
                 </div>
                 <vs-col vs-w="1"></vs-col>
                 <vs-col vs-w="10">
-                    <!-- <div style="display: grid; grid-gap: 5px">
-                        <img style="width: 100%" :src="'http://catco1.portfolios.spatiulab.com/images/teams/' + partner.image" alt="" srcset="" v-for="(partner, index) in partners" :key="index">
-                    </div> -->
                     <div class="galary" style="
                         display: flex;
                         flex-wrap: wrap;
