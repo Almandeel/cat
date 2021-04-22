@@ -6,7 +6,7 @@
                 <vs-navbar v-model="activeItem" class="nabarx" v-if="isRtl" v-bind:class="{ rtl: !isRtl }">
                     <div slot="title">
                         <vs-navbar-title class="logo">
-                            <img style="width:45%" src="../assets/image001.png" alt="" >
+                            <img style="width:45%" src="../assets/logo.png" alt="" >
                         </vs-navbar-title>
                     </div>
 
@@ -46,7 +46,7 @@
                 <vs-navbar v-model="activeItem" class="nabarx" v-else v-bind:class="{ rtl: !isRtl }">
                     <div slot="title">
                         <vs-navbar-title class="logo">
-                            <img style="width:45%" src="../assets/image001.png" alt="" >
+                            <img style="width:45%" src="../assets/logo.png" alt="" >
                         </vs-navbar-title>
                     </div>
                     <vs-navbar-item index="4">
