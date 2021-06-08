@@ -38,10 +38,10 @@
                         <router-link to="/contacts">{{ $t('contacts') }}</router-link>
                     </vs-navbar-item>
 
-                    <vs-navbar-item index="4">
+                    <!-- <vs-navbar-item index="4">
                         <p  v-if="locale == 'ar'" @click="chengeLang('en')" >{{ $t('en') }}</p>
                         <p  v-if="locale == 'en'" @click="chengeLang('ar')" >{{ $t('ar') }}</p>
-                    </vs-navbar-item>
+                    </vs-navbar-item> -->
                 </vs-navbar>
                 <vs-navbar v-model="activeItem" class="nabarx" v-else v-bind:class="{ rtl: !isRtl }">
                     <div slot="title">
@@ -49,10 +49,10 @@
                             <img style="width:45%" src="../assets/logo.png" alt="" >
                         </vs-navbar-title>
                     </div>
-                    <vs-navbar-item index="4">
+                    <!-- <vs-navbar-item index="4">
                         <p  v-if="locale == 'ar'" @click="chengeLang('en')" >{{ $t('en') }}</p>
                         <p  v-if="locale == 'en'" @click="chengeLang('ar')" >{{ $t('ar') }}</p>
-                    </vs-navbar-item>
+                    </vs-navbar-item> -->
 
                     <vs-navbar-item index="3">
                         <router-link to="/contacts">{{ $t('contacts') }}</router-link>
