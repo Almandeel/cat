@@ -31,7 +31,7 @@
               >
                 <img
                   :src="
-                    'http://catco1.portfolios.spatiulab.com/images/works/' +
+                    'https://catco1.portfolios.spatiulab.com/images/works/' +
                       client.image
                   "
                   alt=""
@@ -74,7 +74,7 @@ export default {
     },
     getData() {
       axios
-        .get("http://catco1.portfolios.spatiulab.com/api/clients")
+        .get("https://catco1.portfolios.spatiulab.com/api/clients")
         .then(result => {
           this.clients = result.data;
         });

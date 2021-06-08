@@ -22,7 +22,7 @@
                 <div>
                   <img
                     :src="
-                      'http://catco1.portfolios.spatiulab.com/images/services/' +
+                      'https://catco1.portfolios.spatiulab.com/images/services/' +
                         product.image
                     "
                     style="width:100%"
@@ -51,7 +51,7 @@
                 <div>
                   <img
                     :src="
-                      'http://catco1.portfolios.spatiulab.com/images/services/' +
+                      'https://catco1.portfolios.spatiulab.com/images/services/' +
                         product.image
                     "
                     style="width:100%"
@@ -91,7 +91,7 @@ export default {
   methods: {
     getProducts() {
       axios
-        .get("http://catco1.portfolios.spatiulab.com/api/products")
+        .get("https://catco1.portfolios.spatiulab.com/api/products")
         .then(result => {
           this.products = result.data;
         });

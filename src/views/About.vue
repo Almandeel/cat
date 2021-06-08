@@ -7,7 +7,7 @@
         <vs-row vs-col="12" v-if="main_data !== {}">
           <vs-col vs-lg="6" vs-sm="12" vs-justfy="center" vs-align="center">
             <vs-images hover="scale">
-              <vs-image class="image" :src="'http://catco1.portfolios.spatiulab.com/images/informations/' + main_data.image" />
+              <vs-image class="image" :src="'https://catco1.portfolios.spatiulab.com/images/informations/' + main_data.image" />
             </vs-images>
           </vs-col>
           <vs-col vs-lg="6" vs-sm="12" vs-justify="left" vs-align="left" dir="ltr">
@@ -32,7 +32,7 @@
                   <vs-col vs-w="4">
                     <vs-col vs-justfy="center" vs-align="center">
                       <img width="100%"
-                        :src="'http://catco1.portfolios.spatiulab.com/images/informations/' + about.image " alt="">
+                        :src="'https://catco1.portfolios.spatiulab.com/images/informations/' + about.image " alt="">
                     </vs-col>
                   </vs-col>
                   <vs-col vs-w="8">
@@ -81,7 +81,7 @@
         }, 3000);
       },
       getData() {
-        axios.get("http://catco1.portfolios.spatiulab.com/api/about").then((result) => {
+        axios.get("https://catco1.portfolios.spatiulab.com/api/about").then((result) => {
           this.main_data = result.data[0]
           this.abouts = result.data[1]
           // console.log(this.abouts)

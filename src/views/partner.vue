@@ -30,7 +30,7 @@
             >
               <img
                 :src="
-                  'http://catco1.portfolios.spatiulab.com/images/teams/' +
+                  'https://catco1.portfolios.spatiulab.com/images/teams/' +
                     partner.image
                 "
                 alt=""
@@ -72,7 +72,7 @@ export default {
     },
     getDate() {
       axios
-        .get("http://catco1.portfolios.spatiulab.com/api/partners")
+        .get("https://catco1.portfolios.spatiulab.com/api/partners")
         .then(result => {
           this.partners = result.data;
         });
