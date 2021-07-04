@@ -9,16 +9,16 @@ import VueI18n from 'vue-i18n';
 import messages from './lang';
 Vue.use(VueI18n);
 export const i18n = new VueI18n({
-  locale: localStorage.getItem('lang') || "en" ,
-  fallbackLocale: localStorage.getItem('lang') || "en" ,
+  locale:  "en" ,
+  fallbackLocale:  "en" ,
   messages
 });
 
-
 // set default lang 
-if(!localStorage.getItem('lang')) {
-  localStorage.setItem("lang", "en")
-}
+localStorage.setItem("lang", "en")
+// if(!localStorage.getItem('lang')) {
+//   localStorage.setItem("lang", "en")
+// }
 
 
 

@@ -1,7 +1,7 @@
 <template>
   <swiper class="swiper" :options="swiperOption">
     <swiper-slide v-for="(slider, index) in sliders" :key="index"
-      :style="{backgroundImage: 'url(http://catco1.portfolios.spatiulab.com/images/sliders/'+ slider.image +')' }"
+      :style="{backgroundImage: 'url(https://catco1.portfolios.spatiulab.com/images/sliders/'+ slider.image +')' }"
       :class="{slide :'slide-' + index}"></swiper-slide>
     <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>
     <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
@@ -46,7 +46,7 @@
     },
     methods: {
       slider() {
-        axios.get("http://catco1.portfolios.spatiulab.com/api/home").then((result) => {
+        axios.get("https://catco1.portfolios.spatiulab.com/api/home").then((result) => {
           this.sliders = result.data
         })
       }

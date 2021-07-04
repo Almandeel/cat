@@ -1,11 +1,12 @@
 {
-    "home": "Home",
-    "about": "About",
-    "clients" : "Clients", 
-    "partners" : "Partners",
-    "blog" : "Producsts & Services",
-    "contacts" : "Contacts",
-    "vision" : "Vision and Goals",
+    "home": "HOME",
+    "about": "ABOUT US",
+    "clients" : "CLIENTS", 
+    "partners" : "PARTENERS",
+    "blog" : "PRODUCTS",
+    "services" : "SERVICES",
+    "contacts" : "CONTACT US",
+    "vision" : "VISION AND GOALS",
     "ar" : "العربية",
-    "en" : "English"
+    "en" : "ENGLISH"
 }

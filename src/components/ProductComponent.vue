@@ -2,7 +2,7 @@
     <div class="example-3d">
         <swiper class="swiper" :options="swiperOption">
             <swiper-slide v-for="(product, index) in products" :key="index"
-                :style="{backgroundImage : 'url(http://catco1.portfolios.spatiulab.com/images/services/'+  product.image  +')'}">
+                :style="{backgroundImage : 'url(https://catco1.portfolios.spatiulab.com/images/services/'+  product.image  +')'}">
                 {{ product.name[locale] }}
                 <div class="overlay"></div>
             </swiper-slide>
@@ -57,7 +57,7 @@
         },
         methods: {
             getProducts() {
-                axios.get("http://catco1.portfolios.spatiulab.com/api/products").then((result) => {
+                axios.get("https://catco1.portfolios.spatiulab.com/api/products").then((result) => {
                     this.products = result.data
                 })
             }

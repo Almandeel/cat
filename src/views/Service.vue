@@ -2,7 +2,7 @@
   <div class="posts">
     <div class="posts-title">
       <div class="overlay"></div>
-      <h2 :class="{ ltr: !isRtl }">{{ $t("blog") }}</h2>
+      <h2 :class="{ ltr: !isRtl, rtl: isRtl }">{{ $t("services") }}</h2>
     </div>
 
     <vs-row vs-w="12">
@@ -22,7 +22,7 @@
                 <div>
                   <img
                     :src="
-                      'https://catco1.portfolios.spatiulab.com/images/services/' +
+                      'https://catco1.portfolios.spatiulab.com/images/products/' +
                         product.image
                     "
                     style="width:100%"
@@ -51,7 +51,7 @@
                 <div>
                   <img
                     :src="
-                      'https://catco1.portfolios.spatiulab.com/images/services/' +
+                      'https://catco1.portfolios.spatiulab.com/images/products/' +
                         product.image
                     "
                     style="width:100%"
@@ -91,7 +91,7 @@ export default {
   methods: {
     getProducts() {
       axios
-        .get("https://catco1.portfolios.spatiulab.com/api/products")
+        .get("https://catco1.portfolios.spatiulab.com/api/new-products")
         .then(result => {
           this.products = result.data;
         });
@@ -102,13 +102,19 @@ export default {
   },
   computed: {
     isRtl() {
-      return this.locale == "ar";
+      return localStorage.getItem("lang") == "ar";
     }
   }
 };
 </script>
 
 <style lang="scss">
+.ltr {
+  direction: ltr !important;
+}
+.rtl {
+  direction: rtl !important;
+}
 .posts {
   direction: rtl;
 

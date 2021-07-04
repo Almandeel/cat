@@ -3,19 +3,59 @@
         <vs-row>
             <vs-col vs-w="1"></vs-col>
             <vs-col vs-w="10">
-                <vs-navbar v-model="activeItem" class="nabarx">
+                <vs-navbar v-model="activeItem" class="nabarx" v-if="isRtl" v-bind:class="{ rtl: !isRtl }">
                     <div slot="title">
                         <vs-navbar-title class="logo">
-                            <img style="width:23%" src="../assets/logo.png" alt="" >
+                            <img style="width:45%" src="../assets/logo.png" alt="" >
                         </vs-navbar-title>
                     </div>
 
                     <vs-navbar-item index="0">
-                        <router-link to="/" exact="/">{{ $t('home') }}</router-link>
+                        <router-link to="/" exact>{{ $t('home') }}</router-link>
                     </vs-navbar-item>
 
                     <vs-navbar-item index="1">
                         <router-link to="about">{{ $t('about') }}</router-link>
+                    </vs-navbar-item>
+
+                    <vs-navbar-item index="3">
+                        <router-link to="/products">{{ $t('blog') }}</router-link>
+                    </vs-navbar-item>
+
+                    <vs-navbar-item index="3">
+                        <router-link to="/services">{{ $t('services') }}</router-link>
+                    </vs-navbar-item>
+
+                    <vs-navbar-item index="3">
+                        <router-link to="/partners">{{ $t('partners') }}</router-link>
+                    </vs-navbar-item>
+
+                    <vs-navbar-item index="2">
+                        <router-link to="/clients">{{ $t('clients') }}</router-link>
+                    </vs-navbar-item>
+
+                    <vs-navbar-item index="3">
+                        <router-link to="/contacts">{{ $t('contacts') }}</router-link>
+                    </vs-navbar-item>
+
+                    <!-- <vs-navbar-item index="4">
+                        <p  v-if="locale == 'ar'" @click="chengeLang('en')" >{{ $t('en') }}</p>
+                        <p  v-if="locale == 'en'" @click="chengeLang('ar')" >{{ $t('ar') }}</p>
+                    </vs-navbar-item> -->
+                </vs-navbar>
+                <vs-navbar v-model="activeItem" class="nabarx" v-else v-bind:class="{ rtl: !isRtl }">
+                    <div slot="title">
+                        <vs-navbar-title class="logo">
+                            <img style="width:45%" src="../assets/logo.png" alt="" >
+                        </vs-navbar-title>
+                    </div>
+                    <!-- <vs-navbar-item index="4">
+                        <p  v-if="locale == 'ar'" @click="chengeLang('en')" >{{ $t('en') }}</p>
+                        <p  v-if="locale == 'en'" @click="chengeLang('ar')" >{{ $t('ar') }}</p>
+                    </vs-navbar-item> -->
+
+                    <vs-navbar-item index="3">
+                        <router-link to="/contacts">{{ $t('contacts') }}</router-link>
                     </vs-navbar-item>
 
                     <vs-navbar-item index="2">
@@ -27,16 +67,19 @@
                     </vs-navbar-item>
 
                     <vs-navbar-item index="3">
-                        <router-link to="/products">{{ $t('blog') }}</router-link>
+                        <router-link to="/services">{{ $t('services') }}</router-link>
                     </vs-navbar-item>
 
                     <vs-navbar-item index="3">
-                        <router-link to="/contacts">{{ $t('contacts') }}</router-link>
+                        <router-link to="/products">{{ $t('blog') }}</router-link>
                     </vs-navbar-item>
 
-                    <vs-navbar-item index="4">
-                        <p  v-if="locale == 'ar'" @click="chengeLang('en')" >{{ $t('en') }}</p>
-                        <p  v-if="locale == 'en'" @click="chengeLang('ar')" >{{ $t('ar') }}</p>
+                    <vs-navbar-item index="1">
+                        <router-link to="about">{{ $t('about') }}</router-link>
+                    </vs-navbar-item>
+
+                    <vs-navbar-item index="0">
+                        <router-link to="/" exact>{{ $t('home') }}</router-link>
                     </vs-navbar-item>
                 </vs-navbar>
             </vs-col>
@@ -59,6 +102,11 @@
                 window.location.reload()
             }
         },
+        computed: {
+            isRtl() {
+                return this.locale == 'ar';
+            }
+        }
     }
 </script>
 
@@ -86,7 +134,7 @@
         padding: 10px 0;
     }
 
-    .vs-navbar-color-transparent {
+    .rtl{
         direction: rtl;
     }
 </style>
